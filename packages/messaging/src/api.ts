@@ -26,7 +26,8 @@ import {
   NextFn,
   Observer,
   Unsubscribe,
-  getModularInstance
+  getModularInstance,
+  FirebaseError
 } from '@firebase/util';
 import { isSwSupported, isWindowSupported } from './api/isSupported';
 
@@ -41,6 +42,8 @@ import { _setDeliveryMetricsExportedToBigQueryEnabled } from './api/setDeliveryM
  * Retrieves a Firebase Cloud Messaging instance.
  *
  * @returns The Firebase Cloud Messaging instance associated with the provided firebase app.
+ *
+ * @throws {FirebaseError} The environment doesn't support Firebase Cloud Messaging
  *
  * @public
  */
